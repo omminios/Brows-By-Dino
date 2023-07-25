@@ -1,0 +1,5 @@
+/* Fonts.css */
+@font-face {
+    font-family: 'Lato';
+    src: local('Lato'), url(./Fonts/Lato/Lato-Bold.ttf) format('truetype');
+  }
