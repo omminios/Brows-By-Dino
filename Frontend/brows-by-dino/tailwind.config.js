@@ -7,9 +7,13 @@ module.exports = {
     extend: {
       fontFamily: {
         'lato': ['Lato', 'sans-serif'],
+        'alex-brush': ['Alex Brush', 'cursive']
       },
+    
     },
   },
   plugins: [],
 }
+
+
 
