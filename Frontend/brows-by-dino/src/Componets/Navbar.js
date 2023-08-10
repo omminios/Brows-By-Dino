@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 const Navbar = () => {
-  const [navBackground, setNavBackground] = useState(false)
+  const [navOpacity, setNavOpacity] = useState(0)
 
   const navBarEffect = () => {
-    if (window.scrollY >= 50) {
-      setNavBackground(true)
-    } else {
-      setNavBackground(false)
-    }
+    // Calculate the opacity based on scroll position and view height
+    // Max value is 1, the higher the scrollY the higher the opacity
+    const calculatedOpacity = Math.min(window.scrollY / window.innerHeight, 1);
+    setNavOpacity(calculatedOpacity);
   }
 
   useEffect(() => {
@@ -19,9 +18,9 @@ const Navbar = () => {
   }, [])
 
   return (
-    <nav className={`flex justify-between p-5 fixed w-full z-10 ${navBackground ? 'bg-gray-900 transition-opacity duration-500' : 'bg-transparent transition-opacity duration-500'}`} style={navBackground ? {opacity: 0.9} : {opacity: 1}}>
+    <nav className={`flex justify-between p-5 fixed w-full z-10 text-white transition-opacity duration-1000`} style={{backgroundColor: `rgba(26, 32, 44, ${navOpacity})`}}>
       <div className="text-xl justify-center">
-        <a href="/" className="hover:text-purple-700 font-alex-brush">Brows By Dino</a>
+        <a href="/" className="hover:text-purple-700 font-alex-brush text-3xl">Brows By Dino</a>
       </div>
       <div className="absolute left-1/2 transform -translate-x-1/2 flex justify-around items-center text-xl space-x-4">
         <a href="/home" className="hover:text-purple-700 font-lato">Home</a>
