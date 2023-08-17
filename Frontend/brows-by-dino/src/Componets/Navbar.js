@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import calendar from '../Icons/calendar.svg';
+
 
 const Navbar = () => {
   const [navOpacity, setNavOpacity] = useState(0)
@@ -27,7 +29,15 @@ const Navbar = () => {
         <a href="/services" className="hover:text-purple-700 font-lato">Services</a>
         <a href="/faq" className="hover:text-purple-700 font-lato">FAQ</a>
         <a href="/contact" className="hover:text-purple-700 font-lato">About</a>
-        <button><a href="/book" className="hover:text-purple-700 font-lato p-3 bg-purple-500 rounded-md">Book</a></button>
+        <button className="min-w-12 min-h-8">
+          <a href="/book" className="hover:text-purple-700 font-lato p-2 bg-purple-500 rounded-md flex items-center whitespace-nowrap overflow-hidden">
+          <img src={calendar} alt="Calendar" className="w-5 h-auto mr-2" />
+          Book
+          </a>
+        </button>
+
+
+
       </div>
     </nav>
   );
